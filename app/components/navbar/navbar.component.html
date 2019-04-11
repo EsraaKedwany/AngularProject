@@ -2,9 +2,39 @@
   <h5 class="my-0 mr-md-auto font-weight-normal">Techno shop</h5>
   <nav class="my-2 my-md-0 mr-md-3">
     <a class="p-2 text-dark" href="#">Home</a>
-    <a class="p-2 text-dark" href="#">Wishlist</a>
-    <a class="p-2 text-dark" href="#">Card</a>
+    
+
+    <div ngbDropdown class="d-inline-block">
+      <a class="p-2 text-dark" id="dropdownBasic1" ngbDropdownToggle>Wishlist</a>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem>Action - 1</button>
+        <button ngbDropdownItem>Another Action</button>
+        <button ngbDropdownItem>Something else is here</button>
+      </div>
+    </div>
+
+    <div ngbDropdown class="d-inline-block">
+        <a class="p-2 text-dark" id="dropdownBasic1" ngbDropdownToggle>Card</a>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem>Action - 1</button>
+          <button ngbDropdownItem>Another Action</button>
+          <button ngbDropdownItem>Something else is here</button>
+        </div>
+      </div>
+
+          
+    <!-- <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+        <button class="btn btn-outline-primary mr-2" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">Wishlist</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownManual">
+          <button ngbDropdownItem>Action - 1</button>
+          <button ngbDropdownItem>Another Action</button>
+          <button ngbDropdownItem>Something else is here</button>
+        </div>
+      </div> -->
+    
   </nav>
   <a class="btn btn-outline-primary" href="#">Sign in</a>
   <a class="btn btn-outline-primary" href="#">Profile</a>
 </div>
+
+

@@ -1,0 +1,31 @@
+<main role="main">
+
+  <div class="album py-5 bg-light">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-4" *ngFor="let product of products">
+
+            
+            <div class="card mb-4 shadow-sm">
+              <img src="{{product.ProductPicUrl}}" class="bd-placeholder-img card-img-top" width="100%" height="225" >
+              <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                <title>Placeholder</title>
+                <img xlink:src="{{product.ProductPicUrl}}" height="200" width="200"/>
+              </svg> -->
+              <div class="card-body">
+                <p class="card-text">{{product.Name}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" ><i class="fa fa-heart" [ngStyle]="{color:isActive?'red':'gray' , 'font-size': '20px'}"></i></button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-cart-plus" [ngStyle]="{color:isActive?'yellow':'gray' , 'font-size': '20px'}"></i></button>
+                  </div>
+                  <strong [ngStyle]="{'color':'red'}">{{product.Price}}$</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</main>
