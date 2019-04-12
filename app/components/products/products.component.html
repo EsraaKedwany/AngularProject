@@ -5,22 +5,17 @@
 
         <div class="row">
           <div class="col-md-4" *ngFor="let product of products">
-
             
             <div class="card mb-4 shadow-sm">
-              <img src="{{product.ProductPicUrl}}" class="bd-placeholder-img card-img-top" width="100%" height="225" >
-              <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
-                <title>Placeholder</title>
-                <img xlink:src="{{product.ProductPicUrl}}" height="200" width="200"/>
-              </svg> -->
+              <a ><img src="{{product.ProductPicUrl}}" class="bd-placeholder-img card-img-top" width="100%" height="225" ></a>
               <div class="card-body">
                 <p class="card-text">{{product.Name}}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary" ><i class="fa fa-heart" [ngStyle]="{color:isActive?'red':'gray' , 'font-size': '20px'}"></i></button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-cart-plus" [ngStyle]="{color:isActive?'yellow':'gray' , 'font-size': '20px'}"></i></button>
+                    <button class="btn btn-sm btn-outline-secondary" [ngStyle]="{'font-size': '20px'}" (click)="wishCount = wishCount + 1 ; wishStyle={'color':'red'} " ><i class="material-icons" [ngStyle]="wishStyle">favorite</i></button>
+                    <button class="btn btn-sm btn-outline-secondary" [ngStyle]="{'font-size': '20px'}" (click)="cardCount = cardCount + 1 ; cardStyle={'color':'yellow'}" [routerLink]="['/cart',{id:product.ProductId}]"><i class="material-icons" [ngStyle]="cardStyle">add_shopping_cart</i></button>
                   </div>
-                  <strong [ngStyle]="{'color':'red'}">{{product.Price}}$</strong>
+                  <strong [ngStyle]="{'color':'green'}">{{product.Price}}$</strong>
                 </div>
               </div>
             </div>
