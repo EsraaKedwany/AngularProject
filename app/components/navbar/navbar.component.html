@@ -16,8 +16,9 @@
     <div ngbDropdown class="d-inline-block">
         <a class="p-2 text-dark" id="dropdownBasic1" ngbDropdownToggle>Card</a>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem>Action - 1</button>
-          <button ngbDropdownItem>Another Action</button>
+          <div *ngFor="let item of items">
+            <button ngbDropdownItem>{{item.product.Name}}  <a (click)="remove(item.product.ProductId)" style="right:10px">x</a></button>
+          </div>
           <button routerLink="/card" ngbDropdownItem >Your Products</button>
         </div>
       </div>
