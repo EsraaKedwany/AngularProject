@@ -16,7 +16,7 @@ export class CardComponent implements OnInit {
   
   constructor(
     private activatedRoute: ActivatedRoute,
-		private productService: ProductService
+	private productService: ProductService
 	) 
 	{ }
 

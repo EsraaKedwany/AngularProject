@@ -13,10 +13,10 @@ const appRoutes: Routes = [
     path:'home',
     component:ProductsComponent
   },
-  // {
-  //   path:':id',
-  //   component:SinglePageComponent
-  // },
+  {
+    path:'product',
+    component:SinglePageComponent
+  },
   {
     path:'cart',
     component: CardComponent 
